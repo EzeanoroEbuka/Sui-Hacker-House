@@ -1,9 +1,15 @@
 module 0x1::DataStorage {
-    public struct EncryptedData has key {
-        data: vector<u8>,
+
+
+    public struct EncryptedData has key ,store{
+        id: UID,
+        data: vector<u64>,
     }
 
-    public entry fun store_data(account: &signer, encrypted_data: vector<u8>) {
-        move_to(account, EncryptedData { data: encrypted_data });
+    public fun store_data(encrypted_data: vector<u64>,ctx: &mut TxContext) {
+        let id = object::new(ctx);
+        let sender = tx_context::sender(ctx);
+        transfer::public_transfer(EncryptedData { id, data: encrypted_data },sender);
+
     }
 }

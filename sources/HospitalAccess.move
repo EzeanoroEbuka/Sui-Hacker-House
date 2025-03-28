@@ -1,7 +1,9 @@
 module 0x1::HospitalAccess {
-    public entry fun request_patient_data(
-        account: &signer,
-        patient_wallet_id: address,
-        otp: u64
-    ) returns (vector<u8>) {}
+    public fun request_patient_data(
+        _patient_wallet_id: address,
+        _otp: u64,
+        _account: &mut TxContext,
+    ) {
+
+    }
 }
