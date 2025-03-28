@@ -1,4 +1,4 @@
-module 0x1::AccessControl {
+module 0x0::AccessControl {
     #[allow(unused_field)]
     public struct AccessLevel has copy, drop {
         can_view_public: bool,

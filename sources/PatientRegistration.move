@@ -1,4 +1,4 @@
-module 0x1::PatientRegistration {
+module 0x0::PatientRegistration {
 
     public struct Patient has key,store {
         id: UID,
@@ -30,4 +30,8 @@ module 0x1::PatientRegistration {
             next_of_kin,
         }, wallet_id);
     }
+
+
+
+
 }
