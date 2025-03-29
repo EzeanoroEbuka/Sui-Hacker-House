@@ -1,6 +1,5 @@
 module 0x0::DataStorage {
 
-
     public struct EncryptedData has key ,store{
         id: UID,
         data: vector<u64>,
